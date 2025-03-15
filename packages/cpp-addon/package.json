@@ -1,0 +1,27 @@
+{
+  "name": "cpp-addon",
+  "version": "0.0.1-alpha.0",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "clean": "pnpm --stream '/^clean:.+$/'",
+    "clean:ts": "rimraf dist *.tsbuildinfo",
+    "clean:cpp": "node-gyp clean",
+    "configure": "pnpm clean:cpp && node-gyp configure",
+    "build": "pnpm --stream '/^build:.+$/'",
+    "build:cpp": "pnpm configure && pnpm --stream '/^build:cpp:.+$/'",
+    "build:cpp:release": "node-gyp build",
+    "build:cpp:debug": "node-gyp build --debug",
+    "rebuild": "node-gyp rebuild",
+    "rebuild:debug": "node-gyp rebuild --debug",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "8.3.1"
+  },
+  "packageManager": "pnpm@8.15.9+sha512.499434c9d8fdd1a2794ebf4552b3b25c0a633abcee5bb15e7b5de90f32f47b513aca98cd5cfd001c31f0db454bc3804edccd578501e4ca293a6816166bbd9f81"
+}

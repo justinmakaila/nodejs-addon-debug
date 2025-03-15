@@ -1,0 +1,26 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "request": "launch",
+      "type": "lldb-dap",
+      "name": "(lldb) Debug cpp-addon",
+      "preLaunchTask": "npm: build:cpp:debug - packages/cpp-addon",
+      "program": "node",
+      "args": ["--inspect", "packages/cpp-addon/src/index.js"],
+      "cwd": "${workspaceRoot}"
+    },
+    {
+      "request": "launch",
+      "type": "lldb-dap",
+      "name": "(lldb) Debug cpp-addon-example",
+      "preLaunchTask": "npm: build:cpp:debug - packages/cpp-addon",
+      "program": "node",
+      "args": ["--inspect", "examples/cpp-addon-example/dist/index.js"],
+      "cwd": "${workspaceRoot}"
+    }
+  ]
+}
