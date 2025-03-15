@@ -21,6 +21,15 @@
       "program": "node",
       "args": ["--inspect", "examples/cpp-addon-example/dist/index.js"],
       "cwd": "${workspaceRoot}"
+    },
+    {
+      "request": "launch",
+      "type": "cppvsdbg",
+      "name": "(cppvsdbg) Debug cpp-addon-example",
+      "preLaunchTask": "npm: build:cpp:debug - packages/cpp-addon",
+      "program": "node",
+      "args": ["--inspect", "examples/cpp-addon-example/dist/index.js"],
+      "cwd": "${workspaceRoot}"
     }
   ]
 }
